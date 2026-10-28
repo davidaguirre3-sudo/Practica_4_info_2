@@ -13,9 +13,11 @@ public:
     const string& nombre() const;
 
     void agregarVecino(const string& vecino, int costo);
+    bool eliminarVecino(const string& vecino);
     const map<string, int>& vecinos() const;
 
     void inicializarTabla();
+    void actualizarTabla(const map<string, int>& costos);
     const map<string, int>& tablaCostos() const;
 
 private:
@@ -24,4 +26,4 @@ private:
     map<string, int> tablaCostos_;
 };
 
-#endif // ENRUTADOR_H
+#endif

@@ -1,7 +1,4 @@
 #include "enrutador.h"
-#include "iostream"
-
-using namespace std;
 
 Enrutador::Enrutador(const string& nombre) : nombre_(nombre) {
     inicializarTabla();
@@ -15,6 +12,10 @@ void Enrutador::agregarVecino(const string& vecino, int costo) {
     vecinos_[vecino] = costo;
 }
 
+bool Enrutador::eliminarVecino(const string& vecino) {
+    return vecinos_.erase(vecino) > 0;
+}
+
 const map<string, int>& Enrutador::vecinos() const {
     return vecinos_;
 }
@@ -24,6 +25,10 @@ void Enrutador::inicializarTabla() {
     tablaCostos_[nombre_] = 0;
     for (const auto& v : vecinos_)
         tablaCostos_[v.first] = v.second;
+}
+
+void Enrutador::actualizarTabla(const map<string, int>& costos) {
+    tablaCostos_ = costos;
 }
 
 const map<string, int>& Enrutador::tablaCostos() const {
