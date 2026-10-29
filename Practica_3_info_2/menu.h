@@ -1,10 +1,23 @@
 #ifndef MENU_H
 #define MENU_H
 
-class Menu
-{
+#include "red.h"
+
+class Menu {
 public:
-    Menu();
+    void ejecutar();
+
+private:
+    void mostrarOpciones() const;
+    void cargarArchivo();
+    void agregarEnrutador();
+    void eliminarEnrutador();
+    void agregarEnlace();
+    void eliminarEnlace();
+    void consultarCamino() const;
+    void mostrarTablas() const;
+
+    Red red_;
 };
 
-#endif // MENU_H
+#endif
