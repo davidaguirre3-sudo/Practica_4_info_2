@@ -1,9 +1,7 @@
-#include <iostream>
+#include "menu.h"
 
-using namespace std;
-
-int main()
-{
-    cout << "Hello World!" << endl;
+int main() {
+    Menu menu;
+    menu.ejecutar();
     return 0;
 }
